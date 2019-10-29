@@ -204,15 +204,10 @@ function NavigationMenuItemEdit( {
 				} ) }
 			>
 				{ content }
-				{ ( isSelected || isParentOfSelectedBlock ) && showAppender &&
+				{ ( isSelected || isParentOfSelectedBlock ) &&
 					<InnerBlocks
 						allowedBlocks={ [ 'core/navigation-menu-item' ] }
-					/>
-				}
-				{ ( isSelected || isParentOfSelectedBlock ) && ! showAppender &&
-					<InnerBlocks
-						allowedBlocks={ [ 'core/navigation-menu-item' ] }
-						renderAppender={ false }
+						renderAppender={ showAppender ? InnerBlocks.ButtonBlockAppender : false }
 					/>
 				}
 			</div>
